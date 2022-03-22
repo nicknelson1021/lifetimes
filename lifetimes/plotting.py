@@ -78,7 +78,7 @@ def plot_calibration_purchases_vs_holdout_purchases(
     model,
     calibration_holdout_matrix,
     kind="frequency_cal",
-    title=None
+    title=None,
     n=7,
     **kwargs
 ):
