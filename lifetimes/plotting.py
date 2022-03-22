@@ -75,7 +75,12 @@ def plot_period_transactions(
 
 
 def plot_calibration_purchases_vs_holdout_purchases(
-    model, calibration_holdout_matrix, kind="frequency_cal", n=7, **kwargs
+    model,
+    calibration_holdout_matrix,
+    kind="frequency_cal",
+    title=None
+    n=7,
+    **kwargs
 ):
     """
     Plot calibration purchases vs holdout.
@@ -125,7 +130,10 @@ def plot_calibration_purchases_vs_holdout_purchases(
     else:
         ax = summary.groupby(kind)[["frequency_holdout", "model_predictions"]].mean().iloc[:n].plot(**kwargs)
 
-    plt.title("Actual Purchases in Holdout Period vs Predicted Purchases")
+    if title is None:
+        title = "Actual Purchases in Holdout Period vs Predicted Purchases"
+
+    plt.title(title)
     plt.xlabel(x_labels[kind])
     plt.ylabel("Average of Purchases in Holdout Period")
     plt.legend()
