@@ -74,8 +74,8 @@ def plot_period_transactions(
     return ax
 
 
-def plot_calibration_purchases_vs_holdout_purchases(
-    model, calibration_holdout_matrix, kind="frequency_cal", title=None, n=7, **kwargs):
+def plot_calibration_purchases_vs_holdout_purchases(model, calibration_holdout_matrix, kind="frequency_cal",
+                                                    title=None, n=7, **kwargs):
     """
     Plot calibration purchases vs holdout.
 
